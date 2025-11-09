@@ -1,0 +1,32 @@
+{
+  "name": "mern-testing-server",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/app.js",
+    "start": "node src/app.js",
+    "test": "jest",
+    "test:unit": "jest --testPathPattern=tests/unit",
+    "test:integration": "jest --testPathPattern=tests/integration",
+    "test:coverage": "jest --coverage --verbose",
+    "test:watch": "jest --watch",
+    "setup-test-db": "node scripts/setupTestDB.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.1",
+    "helmet": "^7.0.0",
+    "express-rate-limit": "^6.8.1"
+  },
+  "devDependencies": {
+    "jest": "^29.6.2",
+    "supertest": "^6.3.3",
+    "@jest/globals": "^29.6.2",
+    "mongodb-memory-server": "^8.12.0",
+    "nodemon": "^3.0.1"
+  }
+}

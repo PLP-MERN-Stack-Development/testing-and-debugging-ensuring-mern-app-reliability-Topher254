@@ -1,0 +1,20 @@
+{
+  "name": "mern-testing-app",
+  "version": "1.0.0",
+  "description": "MERN stack application with comprehensive testing",
+  "scripts": {
+    "install-all": "npm install && cd client && npm install && cd ../server && npm install",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "client": "cd client && npm run dev",
+    "server": "cd server && npm run dev",
+    "test": "npm run test:unit && npm run test:integration && npm run test:e2e",
+    "test:unit": "concurrently \"cd client && npm run test:unit\" \"cd server && npm run test:unit\"",
+    "test:integration": "concurrently \"cd client && npm run test:integration\" \"cd server && npm run test:integration\"",
+    "test:e2e": "cd client && npm run test:e2e",
+    "test:coverage": "concurrently \"cd client && npm run test:coverage\" \"cd server && npm run test:coverage\"",
+    "setup-test-db": "cd server && npm run setup-test-db"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
